@@ -3,39 +3,68 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-
 /***
  * Écris une fonction JavaScript filterByTitle qui prend en paramètre un tableau d'objets movies et une chaîne de
  * caractères searchedTitle . Cette fonction doit retourner un nouveau tableau contenant uniquement les objets dont
  * la propriété title contient la chaîne de caractères searchedTitle spécifiée en paramètre et doit être insensible
  * à la casse.
  */
+
+/**
+ * La classe Main est dans tous les projets Java. C'est le point d'entrée.
+ */
 public class Main {
 
+    /**
+     * La méthode statique main de la classe main est le point d'entrée réel de notre programme.
+     * @param args
+     */
     public static void main(String[] args) {
+        // on récupère la liste des films via la méthode createRecentMovies() que vous trouverez plus bas.
         ArrayList<Movie> recentMovies = createRecentMovies();
 
+        // on récupère les films qui ont la chaîne de caractères "the" dans leur titre.
         List<Movie> foundedMovies = filterByTitle(recentMovies, "the");
 
+        // on boucle sur les éléments de la list
         for(Movie movie: foundedMovies) {
+            // on affiche leur title dans la console.
             System.out.println(movie.getTitle());
         }
+        //on saute une ligne dans la console
         System.out.println();
 
+        //on boucle sur les films filtrés par titre sans searchTitle
         for(Movie movie: filterByTitle(recentMovies)) {
+            // on affiche leur title dans la console.
             System.out.println(movie.getTitle());
         }
     }
 
-    private static List<Movie> filterByTitle(ArrayList<Movie> palMovies) {
-        return palMovies;
+    /**
+     * permet de filtrer la liste movies, mais sons paramètres. Est équivalement à la méthode
+     * filterByTitle(movies, searchedTitle) où searchedTitle est null ou équivalent à une chaîne de caractère vide
+     * @param movies
+     * @return la liste filtrée
+     */
+    private static List<Movie> filterByTitle(ArrayList<Movie> movies) {
+        return movies;
     }
 
-    private static List<Movie> filterByTitle(ArrayList<Movie> palMovies, String psSearchedTitle) {
-        return palMovies.stream().filter(movie -> movie.getTitle().toLowerCase().contains(psSearchedTitle.toLowerCase())).toList();
+    /**
+     *
+     * @param movies la liste à filtrer
+     * @param searchedTitle la chaîne de caractères recherchée
+     * @return la liste filtrée
+     */
+    private static List<Movie> filterByTitle(ArrayList<Movie> movies, String searchedTitle) {
+        return movies.stream().filter(movie -> movie.getTitle().toLowerCase().contains(searchedTitle.toLowerCase())).toList();
     }
 
+    /**
+     * crée le tableau de films
+     * @return le tableau de films
+     */
     private static ArrayList<Movie> createRecentMovies() {
         ArrayList<Movie> recentMovies = new ArrayList<>();
         Movie movie1 = new Movie();
