@@ -1,18 +1,18 @@
 package org.example;
 
-import netscape.javascript.JSObject;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONString;
-
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+/***
+ * Écris une fonction JavaScript filterByTitle qui prend en paramètre un tableau d'objets movies et une chaîne de
+ * caractères searchedTitle . Cette fonction doit retourner un nouveau tableau contenant uniquement les objets dont
+ * la propriété title contient la chaîne de caractères searchedTitle spécifiée en paramètre et doit être insensible
+ * à la casse.
+ */
 public class Main {
+
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
